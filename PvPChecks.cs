@@ -146,7 +146,7 @@ namespace PvPChecks
             }
 
             //Checks whether the player is using the unobtainable 7th accessory slot
-            if (player.TPlayer.armor[9].netID != 0)
+            if (player.TPlayer.armor[9].netID != 0 && !player.HasPermission("14pvpchecks.7thslot"))
             {
                 player.Disable("Used 7th accessory slot.", DisableFlags.None);
                 if ((DateTime.Now - WarningMsgCooldown[player.Index]).TotalSeconds > 3)
